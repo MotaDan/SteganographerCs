@@ -5,11 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Steganographer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="473" Width="525">
     <Grid>
-        <Button x:Name="revealButton" Content="Reveal" Margin="30,244,0,0" VerticalAlignment="Top" Width="75" Click="revealButton_Click" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Bottom"/>
-        <TextBox x:Name="textBox" Height="23" Margin="30,40,37,0" TextWrapping="Wrap" Text="InputImage.png" VerticalAlignment="Top"/>
-        <TextBox x:Name="messageTextBox" Height="140" Margin="30,68,37,0" TextWrapping="Wrap" Text="Message" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto"/>
+        <Button x:Name="revealButton" Content="Reveal" Margin="30,356,0,0" VerticalAlignment="Top" Width="75" Click="revealButton_Click" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Bottom"/>
+        <TextBox x:Name="inputImageTextBox" Height="23" Margin="30,49,37,0" TextWrapping="Wrap" Text="InputImage.png" VerticalAlignment="Top"/>
+        <TextBox x:Name="messageTextBox" Height="140" Margin="30,116,37,0" TextWrapping="Wrap" Text="Message" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto"/>
+        <Label x:Name="inputImageLabel" Content="Input Image" HorizontalAlignment="Left" Margin="30,19,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="messalignment="Left" Margin="30,85,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="outputImageTextBox" Height="23" Margin="30,292,37,0" TextWrapping="Wrap" Text="OutputImage.png" VerticalAlignment="Top" AllowDrop="True"/>
+        <Label x:Name="outputImageLabel" Content="Output Image" HorizontalAlignment="Left" Margin="30,261,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="hideButton" Content="Hide" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="30,381,0,0" Click="hideButton_Click"/>
 
     </Grid>
 </Window>
