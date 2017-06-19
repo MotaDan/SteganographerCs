@@ -11,7 +11,7 @@
         <TextBox x:Name="inputImageTextBox" Height="23" Margin="30,49,37,0" TextWrapping="Wrap" Text="InputImage.png" VerticalAlignment="Top"/>
         <TextBox x:Name="messageTextBox" Height="140" Margin="30,116,37,0" TextWrapping="Wrap" Text="Message" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto"/>
         <Label x:Name="inputImageLabel" Content="Input Image" HorizontalAlignment="Left" Margin="30,19,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="messalignment="Left" Margin="30,85,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="messageLabel" Content="Message" HorizontalAlignment="Left" Margin="30,85,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="outputImageTextBox" Height="23" Margin="30,292,37,0" TextWrapping="Wrap" Text="OutputImage.png" VerticalAlignment="Top" AllowDrop="True"/>
         <Label x:Name="outputImageLabel" Content="Output Image" HorizontalAlignment="Left" Margin="30,261,0,0" VerticalAlignment="Top"/>
         <Button x:Name="hideButton" Content="Hide" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="30,381,0,0" Click="hideButton_Click"/>
