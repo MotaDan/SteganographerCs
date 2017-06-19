@@ -25,7 +25,7 @@ namespace Steganographer
             InitializeComponent();
         }
 
-        private void revealButton_Click(object sender, RoutedEventArgs e)
+        private void callSteganographerPy(string command)
         {
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
@@ -37,7 +37,7 @@ namespace Steganographer
             startInfo.UseShellExecute = false;
             process.StartInfo = startInfo;
             process.Start();
-            process.StandardInput.WriteLine("python -m steganographer " + inputImageTextBox.Text);
+            process.StandardInput.WriteLine(command);
             process.StandardInput.Close();
             string output = process.StandardOutput.ReadToEnd();
             string[] outputLines = output.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
@@ -46,64 +46,24 @@ namespace Steganographer
             Console.WriteLine(process.StandardError.ReadToEnd());
         }
 
+        private void revealButton_Click(object sender, RoutedEventArgs e)
+        {
+            callSteganographerPy("python -m steganographer " + inputImageTextBox.Text);            
+        }
+
         private void hideButton_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            startInfo.FileName = "cmd.exe";
-            startInfo.CreateNoWindow = true;
-            startInfo.RedirectStandardInput = true;
-            startInfo.RedirectStandardOutput = true;
-            startInfo.RedirectStandardError = true;
-            startInfo.UseShellExecute = false;
-            process.StartInfo = startInfo;
-            process.Start();
-            process.StandardInput.WriteLine("python -m steganographer " + inputImageTextBox.Text + " -o " + outputImageTextBox.Text + " -m \"" + messageTextBox.Text + "\"");
-            process.StandardInput.Close();
-
-            string output = process.StandardOutput.ReadToEnd();
-            Console.WriteLine(output);
-            Console.WriteLine(process.StandardError.ReadToEnd());
+            callSteganographerPy("python -m steganographer " + inputImageTextBox.Text + " -o " + outputImageTextBox.Text + " -m \"" + messageTextBox.Text + "\"");
         }
 
         private void revealFileButton_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            startInfo.FileName = "cmd.exe";
-            startInfo.CreateNoWindow = true;
-            startInfo.RedirectStandardInput = true;
-            startInfo.RedirectStandardOutput = true;
-            startInfo.RedirectStandardError = true;
-            startInfo.UseShellExecute = false;
-            process.StartInfo = startInfo;
-            process.Start();
-            process.StandardInput.WriteLine("python -m steganographer -r " + inputImageTextBox.Text);
-            process.StandardInput.Close();
-
-            string output = process.StandardOutput.ReadToEnd();
-            Console.WriteLine(output);
-            Console.WriteLine(process.StandardError.ReadToEnd());
+            callSteganographerPy("python -m steganographer -r " + inputImageTextBox.Text);
         }
 
         private void hideFileButton_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            startInfo.FileName = "cmd.exe";
-            startInfo.CreateNoWindow = true;
-            startInfo.RedirectStandardInput = true;
-            startInfo.RedirectStandardOutput = true;
-            startInfo.RedirectStandardError = true;
-            startInfo.UseShellExecute = false;
-            process.StartInfo = startInfo;
-            process.Start();
-            process.StandardInput.WriteLine("python -m steganographer " + inputImageTextBox.Text + " -o " + outputImageTextBox.Text + " -f \"" + inputFileTextBox.Text + "\"");
-            process.StandardInput.Close();
-
-            string output = process.StandardOutput.ReadToEnd();
-            Console.WriteLine(output);
-            Console.WriteLine(process.StandardError.ReadToEnd());
+            callSteganographerPy("python -m steganographer " + inputImageTextBox.Text + " -o " + outputImageTextBox.Text + " -f \"" + inputFileTextBox.Text + "\"");
         }
     }
 }
