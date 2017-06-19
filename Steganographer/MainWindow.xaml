@@ -5,16 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Steganographer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="473" Width="525">
+        Title="MainWindow" Height="513" Width="525">
     <Grid>
-        <Button x:Name="revealButton" Content="Reveal" Margin="30,356,0,0" VerticalAlignment="Top" Width="75" Click="revealButton_Click" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Bottom"/>
+        <Button x:Name="revealButton" Content="Reveal Message" Margin="30,392,0,0" VerticalAlignment="Top" Width="95" Click="revealButton_Click" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Bottom"/>
         <TextBox x:Name="inputImageTextBox" Height="23" Margin="30,49,37,0" TextWrapping="Wrap" Text="InputImage.png" VerticalAlignment="Top"/>
         <TextBox x:Name="messageTextBox" Height="140" Margin="30,116,37,0" TextWrapping="Wrap" Text="Message" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto"/>
         <Label x:Name="inputImageLabel" Content="Input Image" HorizontalAlignment="Left" Margin="30,19,0,0" VerticalAlignment="Top"/>
         <Label x:Name="messageLabel" Content="Message" HorizontalAlignment="Left" Margin="30,85,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="outputImageTextBox" Height="23" Margin="30,292,37,0" TextWrapping="Wrap" Text="OutputImage.png" VerticalAlignment="Top" AllowDrop="True"/>
-        <Label x:Name="outputImageLabel" Content="Output Image" HorizontalAlignment="Left" Margin="30,261,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="hideButton" Content="Hide" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="30,381,0,0" Click="hideButton_Click"/>
+        <TextBox x:Name="outputImageTextBox" Height="23" Margin="30,351,37,0" TextWrapping="Wrap" Text="OutputImage.png" VerticalAlignment="Top" AllowDrop="True"/>
+        <Label x:Name="outputImageLabel" Content="Output Image" HorizontalAlignment="Left" Margin="30,320,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="hideButton" Content="Hide Message" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="30,417,0,0" Click="hideButton_Click"/>
+        <TextBox x:Name="inputFileTextBox" Height="23" Margin="30,292,37,0" TextWrapping="Wrap" Text="Input File" VerticalAlignment="Top"/>
+        <Label x:Name="inputFileLabel" Content="Input File" HorizontalAlignment="Left" Margin="30,261,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="revealFileButton" Content="Reveal File" HorizontalAlignment="Left" Margin="130,392,0,0" VerticalAlignment="Top" Width="75" Click="revealFileButton_Click"/>
+        <Button x:Name="hideFileButton" Content="Hide File" HorizontalAlignment="Left" Margin="130,417,0,0" VerticalAlignment="Top" Width="75" Click="hideFileButton_Click"/>
 
     </Grid>
 </Window>

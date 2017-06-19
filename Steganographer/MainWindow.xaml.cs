@@ -65,5 +65,45 @@ namespace Steganographer
             Console.WriteLine(output);
             Console.WriteLine(process.StandardError.ReadToEnd());
         }
+
+        private void revealFileButton_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.FileName = "cmd.exe";
+            startInfo.CreateNoWindow = true;
+            startInfo.RedirectStandardInput = true;
+            startInfo.RedirectStandardOutput = true;
+            startInfo.RedirectStandardError = true;
+            startInfo.UseShellExecute = false;
+            process.StartInfo = startInfo;
+            process.Start();
+            process.StandardInput.WriteLine("python -m steganographer -r " + inputImageTextBox.Text);
+            process.StandardInput.Close();
+
+            string output = process.StandardOutput.ReadToEnd();
+            Console.WriteLine(output);
+            Console.WriteLine(process.StandardError.ReadToEnd());
+        }
+
+        private void hideFileButton_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.FileName = "cmd.exe";
+            startInfo.CreateNoWindow = true;
+            startInfo.RedirectStandardInput = true;
+            startInfo.RedirectStandardOutput = true;
+            startInfo.RedirectStandardError = true;
+            startInfo.UseShellExecute = false;
+            process.StartInfo = startInfo;
+            process.Start();
+            process.StandardInput.WriteLine("python -m steganographer " + inputImageTextBox.Text + " -o " + outputImageTextBox.Text + " -f \"" + inputFileTextBox.Text + "\"");
+            process.StandardInput.Close();
+
+            string output = process.StandardOutput.ReadToEnd();
+            Console.WriteLine(output);
+            Console.WriteLine(process.StandardError.ReadToEnd());
+        }
     }
 }
